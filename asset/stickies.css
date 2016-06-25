@@ -1,0 +1,45 @@
+.note-anywhere {
+    background-color: #fff046;
+	color: #006;
+    height: 200px;
+    padding: 10px;
+    position: absolute;
+    width: 150px;
+    -webkit-box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+.note-anywhere:hover .closebutton {
+    display: block;
+} 
+
+.note-anywhere .closebutton {
+    display: none;
+    background-image: url(deleteButton.png);
+    height: 30px;
+    position: absolute;
+    left: -15px;
+    top: -15px;
+    width: 30px;
+}
+
+.note-anywhere  .edit {
+    outline: none;
+	text-align:left;
+	font-size: 14px;
+	font-family: arial, sans-serif;
+	height:190px;
+	overflow:auto;
+}
+
+.note-anywhere .timestamp {
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    font-size: 9px;
+    background-color: #db0;
+    color: white;
+    /*border-top: 1px solid #a80;*/
+    padding: 2px 4px;
+    text-align: right;
+}
