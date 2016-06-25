@@ -83,7 +83,7 @@ function updateCount(tab, count) {
             })
         });
     }
-    chrome.browserAction.setBadgeText({text: "" + notes, tabId: tab.id});
+    chrome.browserAction.setBadgeText({text: "" + (notes || 0), tabId: tab.id});
 }
 
 var newNote = function () {
@@ -175,7 +175,7 @@ function getSummary(page) {
         tx.executeSql("SELECT count(*) as c ,host FROM WebKitStickyNotes GROUP BY host ORDER BY c DESC,id LIMIT " + start + ",13", [], function (tx, result) {
             window.notesum = new Array();
             for (var i = 0; i < result.rows.length; ++i) {
-                window.notesum[i] = {count: result.rows.item(i).c, host: result.rows.item(i).host};
+                window.notesum[i] = {count: result.rows.item(i).c || 0, host: result.rows.item(i).host};
             }
         })
     }, function (tx, error) {
